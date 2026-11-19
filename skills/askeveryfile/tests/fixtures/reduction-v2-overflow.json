@@ -1,0 +1,69 @@
+{
+  "schema_version": 2,
+  "status": "full_input_overflow",
+  "failure_reason": "full_input_overflow",
+  "mode": "full",
+  "scan_id": "case",
+  "batch_id": "batch-001",
+  "bindings": {
+    "packet_path": "<SYNTHETIC_PATH>",
+    "packet_sha256": "3dbb82efdaa5e45c33099a9649029a7271762a012b4ad259f60b1a49d480a08a",
+    "scan_plan_path": "<SYNTHETIC_PATH>",
+    "scan_plan_sha256": "cdb16613cf52cad578e414927b07bb09ab66525aa9452824c5beba6e14a83ba2",
+    "scout_validation_path": "<SYNTHETIC_PATH>",
+    "scout_validation_sha256": "0bdf69c6f736d8a57e65029a5f177e12ac3dd0d3e87d2aab87d9bb61a3289297",
+    "results_sha256": "4f1ec099eb4d3921ce9b12216561844f24e0c9e3c3b0b4cb196e08acec86a67d",
+    "result_artifacts": {
+      "results/shard-001.json": "9f832b2afedc6a71f62ce5837ccd09952cb6da3649de0f829153497e2344832a",
+      "results/shard-002.json": "cec4fdde8d2e1fddf59445bcf18e4426481bf2db11ef6e7fcbbde9c1a2deb92a"
+    },
+    "context_catalog_path": "<SYNTHETIC_PATH>",
+    "context_catalog_sha256": "13c78ae9a5c36f82ddd5aad0d5a3355ac8fb644623a8fbaac7c7024df3048a33",
+    "projection_schema_version": 1,
+    "projection_sha256": "21cdccf1677ee6cc95bcf968fb78e62fce00e780c0aa87c3f4db138759c02dca",
+    "projection_source_packet_sha256": "3dbb82efdaa5e45c33099a9649029a7271762a012b4ad259f60b1a49d480a08a"
+  },
+  "policy": {
+    "agent": "codex",
+    "model": "legacy-test-reducer",
+    "effort": "medium",
+    "sandbox": "read-only",
+    "tools": []
+  },
+  "policy_sha256": "6b2d508265d0a078bb79a57748dcbeb8836bb1afbbf58d3cb2ab3a798930d02c",
+  "prompt_template_path": "<LEGACY_TEMPLATE>",
+  "prompt_template_sha256": "4303e769078ccb75d9e8484e66b27764ccf348e8dfbecb0daef86f4af3e7d1a8",
+  "rendered_prompt_sha256": "d6ea50501c081675cd73570421b25b66e1aecd0d68bf0336de9882aeae6ab75b",
+  "schema_sha256": "0d806f0769823c8c4f26348bb126785c5b91c3e1750b13f30a2ede0c5410c6e3",
+  "context": {
+    "context_window_tokens": 1000,
+    "output_reserve_tokens": 5376,
+    "output_reserve": {
+      "kind": "count_derived_estimate",
+      "formula": "base + records*per_record + max_clusters*per_cluster + unresolved*per_unresolved + receipts*per_receipt",
+      "counts": {
+        "records": 2,
+        "max_clusters": 2,
+        "unresolved": 2,
+        "receipts": 2
+      },
+      "constants": {
+        "base_tokens": 4096,
+        "per_record_tokens": 192,
+        "per_cluster_tokens": 256,
+        "per_unresolved_tokens": 96,
+        "per_receipt_tokens": 96
+      },
+      "computed_tokens": 5376,
+      "backend_enforced_maximum": false
+    },
+    "recovery_headroom_tokens": 8192,
+    "system_prompt_reserve_tokens": 8192,
+    "rendered_prompt_utf8_bytes": 3993,
+    "schema_utf8_bytes": 5016,
+    "estimated_input_tokens": 11008,
+    "usable_input_tokens": -12568,
+    "estimator": "ceil(utf8_bytes/3.2)"
+  },
+  "batch_input_sha256": "21cdccf1677ee6cc95bcf968fb78e62fce00e780c0aa87c3f4db138759c02dca"
+}
