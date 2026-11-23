@@ -5,25 +5,27 @@ description: How to show the user what they must judge or check — asking them 
 
 # askmeclearly
 
-The user does not want to read long explanations to hunt for differences. Make the short question and choice names carry the decision: the user can identify the subject, compare the consequences, and find the matching evidence without searching the surrounding explanation. Report progress and results the same way: what happened in one line, and a picture that shows where to look. Learn preferences from the answers and use them in the next question and the next piece of work.
+The reader is a person, and a person does not take in a message the way you, an AI, do. You can be handed every detail and use all of it. A person holds only a few things in mind at once, skims, comes to your message from other work knowing none of the names and steps you built up while working, and gives up when reading costs too much. So more detail does not make their judgment safer. It makes it harder: every fact you add draws attention from the few the judgment turns on. Do not hand over what you know or what you did. Give the conclusion and only what the user could not judge or check as well without, in words they already use, and leave the rest where it can be opened.
+
+Make the short question and choice names carry the decision: the user can identify the subject, compare the consequences, and find the matching evidence without searching the surrounding explanation. Learn preferences from the answers and use them in the next question and the next piece of work.
 
 Write user-facing output in the language the user is currently using.
 
 ## Before asking
 
-- Confirm that the user's judgment is really needed. Decide yourself what research can settle or what you have been trusted with. Fix an unmet requirement within your authority, or report it as unmet; do not ask the user to accept it as though it were an equivalent alternative.
+- Confirm that the user's judgment is really needed. Fix an unmet requirement within your authority, or report it as unmet; do not ask the user to accept it as though it were an equivalent alternative.
 - Read the user's preferences kept in this environment (memory, instruction files, and so on) and apply them to how you ask and to what the options contain.
 - One question is one decision. Identify what the user is choosing now: an alternative, acceptance of a result, or permission to start a defined scope. Keep the alternatives on that same axis. Include the current state or deferral when it is a real choice; do not require a “Now + numbered options” set. Usually show at most three actionable alternatives; narrow a larger set yourself and name any materially different discarded choice and reason so the user can overturn it.
 
 ## Shape of one question
 
-The short question and choice names may be shown separately from the explanation. Make that part sufficient to answer: name the user-visible subject and location or action, what is being decided now, and the concrete consequence of each choice. Use the user's words; do not make commits, files, or functions the subject. Put the meaning in the names themselves rather than leaving it to “Now”, “Option 1”, “this”, or a distant paragraph. Choose parallel names that answer the same question. Put distinguishing words first when space is limited; keep the subject and decision clear instead of shortening them to a vague pronoun. The working system owns numbering and reply syntax.
+The short question and choice names may be shown separately from the explanation. Make that part sufficient to answer: name the user-visible subject and location or action, what is being decided now, and the concrete consequence of each choice. Use the user's words; do not make commits, files, or functions the subject. Put the meaning in the names themselves rather than leaving it to “Now”, “Option 1”, “this”, or a distant paragraph. Choose parallel names that answer the same question. Put distinguishing words first when space is limited. The working system owns numbering and reply syntax.
 
 Under each choice, show only the evidence and differences needed to judge it. Compare the same subject, area, and conditions across alternatives. Place the matching image, recording, or text excerpt with that choice and refer to it by the same subject or action. Image marks identify areas or steps, not questions or choices; keep those identities distinct and readable without decoding bare numbers. If a choice changes several areas, each belongs to that same choice.
 
 Keep decision-changing limitations and unknowns in the short comparison, where they can be read before selecting. State genuinely shared constraints once close to the choices. Say what selecting authorizes and what remains afterward; a proposal, a trial, an implementation approval, and completion are different commitments. Do not present a missing requirement as a preference or hide it by making the names simpler.
 
-Finish with a brief recommendation and reason, and a way to answer supported by the working system. The names in the recommendation, evidence, and reply instructions must identify the same choices. Use that system's required headings and delivery location; in ordinary chat, stack the choices vertically with a short heading and consequence for each. For long text, summarize the differences and link the complete text or diff.
+Finish with a brief recommendation and reason, and a way to answer supported by the working system. The names in the recommendation, evidence, and reply instructions must identify the same choices. Use that system's required headings and delivery location; in ordinary chat, stack the choices vertically with a short heading and consequence for each.
 
 In ordinary chat, where no working system gives the question its form, the result reads like this. It shows the shape only, with its pictures left out; write your own names and lines, as plain Markdown rather than a code block.
 
@@ -44,7 +46,7 @@ Recommended: keep Export in the toolbar, because it is used daily and a second c
 Reply with the name of the choice.
 ```
 
-Use pictures when they help the user judge the difference. Words must still identify the subject and consequence if images do not show. For a visual comparison, use short “where: what you see” lines when they make the difference easier to scan. The short names and the evidence must agree whether those lines are prose or bullets. If using ◀, it marks a line that differs between the choices.
+Use pictures when they help the user judge the difference. For a visual comparison, use short “where: what you see” lines when they make the difference easier to scan. If using ◀, it marks a line that differs between the choices.
 
 In the question itself, do not draw with characters: no layouts in code blocks, no box-drawing frames, no columns lined up with spaces, no choices side by side. A chat wraps lines at its own width, and many chat fonts do not give a full-width character exactly two columns, so such drawings fall apart. Keep each bullet short enough to fit one line on a phone (about 20 full-width characters).
 
@@ -52,20 +54,20 @@ Choose the picture by what changes:
 
 - Screens: the image is the real screen cropped to the area around the change, with each change outlined in red and labelled with the area’s name, and the same area for every choice. Do not capture unrelated parts. The bullets name that area and what appears there, using the same area or step label as the image. Make the images as in "Making screen images" below. When the difference is in motion (a hover, an animation, a flow across screens), a still cannot show it: attach a short recording too, made as in "Marking screen recordings".
 - Features, behavior, approaches: if this environment has a way to draw diagrams (a diagram tool, a screen that renders a diagram format, and so on) and it would be clearer, attach a diagram of the flow; keep it to about five boxes and mark what differs between choices. The bullets give the flow on one line with arrows (`A → B → C`).
-- Long text (instructions, policies, explanations): do not lay out the full text. For each option, summarize what changes in one to three lines and lay out only the differences. Point to where the full text can be opened in one line.
+- Long text (instructions, policies, explanations): do not lay out the full text. For each option, summarize what changes and lay out only the differences. Point to where the full text can be opened in one line.
 
 Attach images in whatever form this environment can show in the chat; if it cannot, give the file location in one line.
 
 ## Shape of one report
 
-A report tells the user what happened, so they can check it without hunting. A question is a report that ends in a decision: when you need one, write the report, then the question in the shape above. When to report and where a report is kept belong to the working system (a task tool, a chat); this section shapes only what the user reads.
+A report is for what the user does next with the result: accept it, look at it, use it, or step in. A question is a report that ends in a decision: when you need one, report only what that decision rests on, then ask in the shape above. When to report and where a report is kept belong to the working system (a task tool, a chat); this section shapes only what the user reads.
 
 1. Headline: one line, in the user's words, on what happened or what is now true. Do not make internal names (commits, files, functions, run IDs) the subject. It must stand alone: lists, notifications, and hover cards may show only this line.
-2. What to look at: one to three short lines — what changed, what a check found, what is still open. Write numbers as digits.
-3. Picture, when the result is something seen: the real screen cropped to the area the report is about, with that area outlined in red and labelled (see "Making screen images"; in a report, box what the report is about rather than the difference between the alternatives). Give every picture its purpose in one line, as its caption or alt text (`![Review card: answer buttons](path)`). Use one to three pictures; never one without its purpose. For before and after, use the same crop for both.
+2. What the user needs in order to act on the result, in short lines: what is different for them now, what does not hold or could not be checked, what is left for them to decide or do. Write numbers as digits.
+3. Picture, when the result is something seen: the real screen cropped to the area the report is about, with that area outlined in red and labelled (see "Making screen images"; in a report, box what the report is about rather than the difference between the alternatives). Give every picture its purpose in one line, as its caption or alt text (`![Review card: answer buttons](path)`). For before and after, use the same crop for both.
 4. Only when needed: one line on what comes next, or on what you need from the user.
 
-Leave out logs, a list of every step, and what the previous report already said. Link to files for details instead of pasting them. "Still working" with nothing new is not a report.
+Leave out how you got there (steps, logs, how many tests or review rounds ran, what you tidied up), what you noticed that does not change this result (if the user must act on it, report it on its own), and what the previous report already said. Say what a check means for the user (it works as asked, or this part is unverified), not how much checking there was. A record of the work that other instructions require goes where the working system keeps records, or into a linked file, not into what the user reads. Link to files for details instead of pasting them. "Still working" with nothing new is not a report.
 
 ## Making screen images
 
@@ -154,7 +156,8 @@ When the screen is not a page Playwright can drive, or no Chromium-family browse
 
 ## Before sending
 
-- Read only the short question and choice names first: can a reader identify the subject and location or action, the decision, and each consequence without searching elsewhere? Then check that the nearby evidence has the same identity and that constraints affecting the choice remain visible. Remove explanation that does not help that judgment.
+- Read only the short question and choice names first: can a reader identify the subject and location or action, the decision, and each consequence without searching elsewhere? Then check that the nearby evidence has the same identity and that constraints affecting the choice remain visible.
+- For each part, ask whether the user could judge or check as well without it; if so, cut it, even when it is true and took work to find. Decide it on the message itself, not by whether you or another AI found it clear, and ask again after each fix.
 - Compare each picture and image against the difference you wrote: does it really show it, is the red outline or `◀` in the right place. Read the body once without the images: the choices must still be told apart.
 - After summarizing long text, compare against the full text sentence by sentence: no difference between options is missing, and anything you called "the same behavior" really is.
 - When you cannot show a difference (no capture, no material), do not fill the gap with an invented picture; say so.
