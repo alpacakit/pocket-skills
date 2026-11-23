@@ -5,7 +5,9 @@ description: How to show the user what they must judge or check — asking them 
 
 # askmeclearly
 
-The reader is a person who skims and gives up when it costs too much, so every part must help them judge or check. Make the short question and choice names carry the decision: the user can identify the subject, compare the consequences, and find the matching evidence without searching the surrounding explanation. Learn preferences from the answers and use them in the next question and the next piece of work.
+The reader is a person, and a person does not take in a message the way you, an AI, do. You can be handed every detail and use all of it. A person holds only a few things in mind at once, skims, comes to your message from other work knowing none of the names and steps you built up while working, and gives up when reading costs too much. So more detail does not make their judgment safer. It makes it harder: every fact you add draws attention from the few the judgment turns on. Do not hand over what you know or what you did. Give the conclusion and only what the user could not judge or check as well without, in words they already use, and leave the rest where it can be opened.
+
+Make the short question and choice names carry the decision: the user can identify the subject, compare the consequences, and find the matching evidence without searching the surrounding explanation. Learn preferences from the answers and use them in the next question and the next piece of work.
 
 Write user-facing output in the language the user is currently using.
 
@@ -58,14 +60,14 @@ Attach images in whatever form this environment can show in the chat; if it cann
 
 ## Shape of one report
 
-A question is a report that ends in a decision: when you need one, write the report, then the question in the shape above. When to report and where a report is kept belong to the working system (a task tool, a chat); this section shapes only what the user reads.
+A report is for what the user does next with the result: accept it, look at it, use it, or step in. A question is a report that ends in a decision: when you need one, report only what that decision rests on, then ask in the shape above. When to report and where a report is kept belong to the working system (a task tool, a chat); this section shapes only what the user reads.
 
 1. Headline: one line, in the user's words, on what happened or what is now true. Do not make internal names (commits, files, functions, run IDs) the subject. It must stand alone: lists, notifications, and hover cards may show only this line.
-2. What to look at: short lines — what changed, what a check found, what is still open. Write numbers as digits.
+2. What the user needs in order to act on the result, in short lines: what is different for them now, what does not hold or could not be checked, what is left for them to decide or do. Write numbers as digits.
 3. Picture, when the result is something seen: the real screen cropped to the area the report is about, with that area outlined in red and labelled (see "Making screen images"; in a report, box what the report is about rather than the difference between the alternatives). Give every picture its purpose in one line, as its caption or alt text (`![Review card: answer buttons](path)`). For before and after, use the same crop for both.
 4. Only when needed: one line on what comes next, or on what you need from the user.
 
-Leave out logs, a list of every step, and what the previous report already said. Link to files for details instead of pasting them. "Still working" with nothing new is not a report.
+Leave out how you got there (steps, logs, how many tests or review rounds ran, what you tidied up), what you noticed that does not change this result (if the user must act on it, report it on its own), and what the previous report already said. Say what a check means for the user (it works as asked, or this part is unverified), not how much checking there was. A record of the work that other instructions require goes where the working system keeps records, or into a linked file, not into what the user reads. Link to files for details instead of pasting them. "Still working" with nothing new is not a report.
 
 ## Making screen images
 
@@ -155,7 +157,7 @@ When the screen is not a page Playwright can drive, or no Chromium-family browse
 ## Before sending
 
 - Read only the short question and choice names first: can a reader identify the subject and location or action, the decision, and each consequence without searching elsewhere? Then check that the nearby evidence has the same identity and that constraints affecting the choice remain visible.
-- For each part, ask whether the user could judge or check as well without it; if so, cut it. Decide it on the message itself, not by whether you or another AI found it clear, and ask again after each fix.
+- For each part, ask whether the user could judge or check as well without it; if so, cut it, even when it is true and took work to find. Decide it on the message itself, not by whether you or another AI found it clear, and ask again after each fix.
 - Compare each picture and image against the difference you wrote: does it really show it, is the red outline or `◀` in the right place. Read the body once without the images: the choices must still be told apart.
 - After summarizing long text, compare against the full text sentence by sentence: no difference between options is missing, and anything you called "the same behavior" really is.
 - When you cannot show a difference (no capture, no material), do not fill the gap with an invented picture; say so.
