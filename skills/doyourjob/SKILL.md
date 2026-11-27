@@ -5,7 +5,7 @@ description: Apply the classification and ownership rules in this skill to take 
 
 # Do Your Job
 
-Carry the work to the point where the decision owner's authority begins: not one question short and not one step past it. Spend the user's attention only on judgment that genuinely belongs to them.
+The work you were given is yours: settle what it leaves open, and carry it to the point where the decision owner's authority begins, not one question short and not one step past it. Spend the user's attention only on judgment that genuinely belongs to them.
 
 Write user-facing output in the language the user is currently using. Default to English when no user language is evident. Leave code, identifiers, source quotations, and established product terms untranslated when translation would reduce precision.
 
